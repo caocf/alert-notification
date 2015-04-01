@@ -1,6 +1,5 @@
 package com.clemble.casino.server.notification;
 
-import com.clemble.casino.game.GamePaymentSource;
 import com.clemble.casino.goal.GoalPaymentSource;
 import com.clemble.casino.lifecycle.management.outcome.NoOutcome;
 import com.clemble.casino.money.Currency;
@@ -11,7 +10,6 @@ import com.clemble.casino.payment.notification.PaymentNotification;
 import com.clemble.casino.player.notification.PlayerConnectedNotification;
 import com.clemble.casino.server.notification.repository.PlayerNotificationRepository;
 import com.clemble.casino.server.notification.spring.PlayerNotificationSpringConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Assert;
@@ -21,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
 import java.util.List;
 
 /**
