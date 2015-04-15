@@ -5,4 +5,4 @@ EXPOSE 10002
 
 ADD target/alert-notification-*-SNAPSHOT.jar /data/alert-notification.jar
 
-CMD java -jar -Dspring.profiles.active=cloud -Dserver.port=10002 /data/alert-notification.jar
+CMD java -jar -Dspring.profiles.active=cloud -Dlogging.config=classpath:logback.cloud.xml -Dserver.port=10002 /data/alert-notification.jar
