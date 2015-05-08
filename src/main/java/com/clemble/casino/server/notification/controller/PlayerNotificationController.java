@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
  * Created by mavarazy on 11/29/14.
  */
 @RestController
-public class PlayerNotificationServiceController implements PlayerNotificationService {
+public class PlayerNotificationController implements PlayerNotificationService {
 
     final private PlayerNotificationRepository notificationRepository;
 
-    public PlayerNotificationServiceController(PlayerNotificationRepository notificationRepository) {
+    public PlayerNotificationController(PlayerNotificationRepository notificationRepository) {
         this.notificationRepository = notificationRepository;
     }
 

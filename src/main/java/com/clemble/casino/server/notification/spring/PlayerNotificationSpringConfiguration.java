@@ -1,7 +1,7 @@
 package com.clemble.casino.server.notification.spring;
 
 import com.clemble.casino.player.service.PlayerConnectionService;
-import com.clemble.casino.server.notification.controller.PlayerNotificationServiceController;
+import com.clemble.casino.server.notification.controller.PlayerNotificationController;
 import com.clemble.casino.server.notification.listener.SystemNotificationAddEventListener;
 import com.clemble.casino.server.notification.repository.PlayerNotificationRepository;
 import com.clemble.casino.server.player.notification.ServerNotificationService;
@@ -28,8 +28,8 @@ public class PlayerNotificationSpringConfiguration implements SpringConfiguratio
     }
 
     @Bean
-    public PlayerNotificationServiceController playerNotificationServiceController(PlayerNotificationRepository notificationRepository) {
-        return new PlayerNotificationServiceController(notificationRepository);
+    public PlayerNotificationController playerNotificationServiceController(PlayerNotificationRepository notificationRepository) {
+        return new PlayerNotificationController(notificationRepository);
     }
 
     @Bean
