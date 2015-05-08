@@ -4,6 +4,7 @@ import com.clemble.casino.WebMapping;
 import com.clemble.casino.notification.PlayerNotification;
 import com.clemble.casino.player.PlayerNotificationWebMapping;
 import com.clemble.casino.player.service.PlayerNotificationService;
+import com.clemble.casino.server.ExternalController;
 import com.clemble.casino.server.notification.repository.PlayerNotificationRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
  * Created by mavarazy on 11/29/14.
  */
 @RestController
-public class PlayerNotificationController implements PlayerNotificationService {
+public class PlayerNotificationController implements PlayerNotificationService, ExternalController {
 
     final private PlayerNotificationRepository notificationRepository;
 
