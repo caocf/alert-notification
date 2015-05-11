@@ -5,7 +5,6 @@ import com.clemble.casino.server.notification.controller.PlayerNotificationContr
 import com.clemble.casino.server.notification.listener.SystemNotificationAddEventListener;
 import com.clemble.casino.server.notification.repository.PlayerNotificationRepository;
 import com.clemble.casino.server.player.notification.ServerNotificationService;
-import com.clemble.casino.server.player.notification.SystemNotificationServiceListener;
 import com.clemble.casino.server.spring.common.CommonSpringConfiguration;
 import com.clemble.casino.server.spring.common.MongoSpringConfiguration;
 import com.clemble.casino.server.spring.common.SpringConfiguration;
@@ -36,10 +35,8 @@ public class PlayerNotificationSpringConfiguration implements SpringConfiguratio
     public SystemNotificationAddEventListener systemNotificationServiceListener(
         @Qualifier("playerNotificationService") ServerNotificationService notificationService,
         PlayerNotificationRepository notificationRepository,
-        @Qualifier("playerConnectionClient") PlayerConnectionService connectionService,
-        SystemNotificationServiceListener notificationServiceListener) {
+        @Qualifier("playerConnectionClient") PlayerConnectionService connectionService) {
         SystemNotificationAddEventListener notificationAddEventListener = new SystemNotificationAddEventListener(connectionService, notificationRepository, notificationService);
-        notificationServiceListener.subscribe(notificationAddEventListener);
         return notificationAddEventListener;
     }
 
