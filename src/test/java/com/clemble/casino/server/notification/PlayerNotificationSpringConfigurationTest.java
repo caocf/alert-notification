@@ -1,7 +1,7 @@
 package com.clemble.casino.server.notification;
 
 import com.clemble.casino.goal.GoalPaymentSource;
-import com.clemble.casino.lifecycle.management.outcome.NoOutcome;
+import com.clemble.casino.lifecycle.management.outcome.Outcome;
 import com.clemble.casino.money.Currency;
 import com.clemble.casino.money.Money;
 import com.clemble.casino.money.Operation;
@@ -45,7 +45,7 @@ public class PlayerNotificationSpringConfigurationTest {
             "B",
             Money.create(Currency.DEFAULT, 50),
             Operation.Credit,
-            new GoalPaymentSource("goalKey", "player", "goal", new NoOutcome()),
+            new GoalPaymentSource("goalKey", "player", "goal", Outcome.none),
             DateTime.now(DateTimeZone.UTC));
         PlayerConnectionAddNotification connectedNotification = new PlayerConnectionAddNotification("AB", "B", new PlayerConnection("F", "Con"), DateTime.now(DateTimeZone.UTC));
         // Step 2. Save notification
